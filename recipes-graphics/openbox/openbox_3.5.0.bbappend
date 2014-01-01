@@ -1,5 +1,3 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-
 # Don't forget to bump PRINC if you update the extra files.
 PRINC := "${@int(PRINC) + 7}"
 
@@ -13,6 +11,9 @@ SRC_URI += "file://mini_x.session"
 SRC_URI += "file://menu.xml"
 
 S="${WORKDIR}"
+
+PACKAGECONFIG = "imlib2 xrandr xcursor startup-notification"
+EXTRA_OECONF += "--disable-rpath"
 
 do_configure_prepend() {
 	sed -i \
@@ -34,13 +35,11 @@ do_install_append () {
 	# add some rpi images (creative commons share-able)
 	install -d ${D}/usr/share/backgrounds
 	install ${S}/rpi-backgrounds/* ${D}/usr/share/backgrounds/
-
-	# cleanup
-	rm -rf ${D}/usr/share/gnome-session
 }
 
 PACKAGES =+ "openbox-backgrounds"
 
+FILES_${PN}-gnome += "${datadir}/gnome/ ${datadir}/gnome-session"
 FILES_${PN}-backgrounds = "/usr/share/backgrounds/*"
 FILES_${PN}-config += "${sysconfdir}/mini_x/*"
 
