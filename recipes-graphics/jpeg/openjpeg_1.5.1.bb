@@ -12,7 +12,7 @@ SRC_URI = "http://openjpeg.googlecode.com/files/openjpeg-${PV}.tar.gz"
 
 S = "${WORKDIR}/openjpeg-${PV}"
 
-inherit cmake
+inherit autotools pkgconfig
 
 EXTRA_OECMAKE="-DBUILD_SHARED_LIBS:BOOL=ON"
 
