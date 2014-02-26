@@ -5,11 +5,13 @@ BUGTRACKER = "https://bugs.eclipse.org/bugs/"
 LICENSE = "EPL-1.0 | EDL-1.0"
 LIC_FILES_CHKSUM = "file://edl-v10.html;md5=522a390a83dc186513f0500543ad3679"
 
-SRCREV = "1.1"
+# no more tags/branches as SRCREV
+BRANCH = "1.1"
+SRCREV = "${AUTOREV}"
 PV = "1.1+git${SRCPV}"
 PR = "r0"
 
-SRC_URI = "git://git.eclipse.org/gitroot/tcf/org.eclipse.tcf.agent.git \
+SRC_URI = "git://git.eclipse.org/gitroot/tcf/org.eclipse.tcf.agent.git;protocol=http;branch=${BRANCH} \
            file://tcf-agent.init \
            file://fix_ranlib.patch \
 "
