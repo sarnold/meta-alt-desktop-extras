@@ -5,6 +5,8 @@ SECTION = "libs"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1153c321aaa5ae2733736b49673563d9"
 
+DEPENDS += "lcms libpng zlib"
+
 PR = "r1"
 BBCLASSEXTEND = "native"
 
@@ -14,7 +16,7 @@ S = "${WORKDIR}/openjpeg-${PV}"
 
 inherit autotools pkgconfig
 
-EXTRA_OECMAKE="-DBUILD_SHARED_LIBS:BOOL=ON"
+EXTRA_OECONF = " --enable-debug --disable-tiff --disable-lcms2 --disable-doc"
 
 do_install_append() {
     rm -rf ${D}/usr/lib/openjpeg-1.5
