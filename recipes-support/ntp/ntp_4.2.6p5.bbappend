@@ -24,8 +24,7 @@ do_install_append() {
     rm -rf ${D}/lib
     install -d ${D}${localstatedir}/lib/ntp ${D}${sysconfdir}/init.d
     chown ntp:ntp ${D}${localstatedir}/lib/ntp
-    cp -f ${WORKDIR}/ntpd.init ${D}${sysconfdir}/init.d/ntpd
-    chmod +x ${D}${sysconfdir}/init.d/ntpd
+    install -T -m 0755 ${WORKDIR}/ntpd.init ${D}${sysconfdir}/init.d/ntpd
 }
 
 USERADD_PACKAGES = "${PN}"
