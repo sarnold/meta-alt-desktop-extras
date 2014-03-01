@@ -1,0 +1,6 @@
+# Configuration for the Makefile
+LIBS := -ljbig2dec -lopenjpeg -ljpeg -lz -lm ${X11_LIBS}
+CFLAGS := -Wall --std=gnu99 -Ifitz -Imupdf $(THIRD_INCS)
+
+X11_LIBS = -lX11 -lXext
+PDFVIEW_EXE = $(X11VIEW_EXE)
