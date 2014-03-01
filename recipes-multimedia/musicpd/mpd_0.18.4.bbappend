@@ -5,6 +5,11 @@ PRINC := "${@int(PRINC) + 6}"
 SRC_URI_append = "file://mpd \
 "
 
+DEPENDS = "alsa-lib libsamplerate0 libsndfile1 libvorbis libogg faad2 curl sqlite bzip2"
+
+PACKAGECONFIG[ffmpeg] = "--enable-ffmpeg,--disable-ffmpeg,ffmpeg"
+PACKAGECONFIG[pulseaudio] = "--enable-pulse,--disable-pulse,pulseaudio"
+
 inherit update-rc.d
 
 INITSCRIPT_NAME = "mpd"

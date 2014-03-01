@@ -12,7 +12,6 @@ SRC_URI += "file://menu.xml"
 
 S="${WORKDIR}"
 
-PACKAGECONFIG = "imlib2 xrandr xcursor startup-notification"
 EXTRA_OECONF += "--disable-rpath"
 
 do_configure_prepend() {
