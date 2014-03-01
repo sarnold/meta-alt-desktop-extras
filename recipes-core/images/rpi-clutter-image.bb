@@ -1,7 +1,11 @@
 DESCRIPTION = "A custom image with support for the Open GL-based toolkit \
 Clutter, based on core-image."
 
-# don't include images based on core-image-minimal
+# this shouldn't be required, but seems to be now...
+include recipes-core/images/rpi-hwup-image.bb
+
+# core-image bbclass provides core-boot and base packages
+inherit core-image
 
 IMAGE_FEATURES += "package-management ssh-server-dropbear splash"
 

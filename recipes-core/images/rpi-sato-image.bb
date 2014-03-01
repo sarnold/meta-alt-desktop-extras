@@ -1,6 +1,10 @@
 DESCRIPTION = "A custom image based on core-image and x11/sato."
 
-# don't include images based on core-image-minimal
+# this shouldn't be required, but seems to be now...
+include recipes-core/images/rpi-hwup-image.bb
+
+# core-image bbclass provides core-boot and base packages
+inherit core-image
 
 IMAGE_FEATURES += "package-management ssh-server-dropbear splash \
     x11-sato x11-base hwcodecs"
