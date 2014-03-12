@@ -1,15 +1,26 @@
-include recipes-core/images/rpi-console-image.bb
+include console-image-plus.bb
 
 DESCRIPTION = "A custom openbox image based on rpi-console-image"
-PR = "r7"
+PR = "r1"
 
-DISTRO_FEATURES += " x11 "
-IMAGE_FEATURES += " x11 x11-base "
+# base image features set in console-image-plus.bb
+IMAGE_FEATURES_append = " x11 x11-base "
 
-PACKAGECONFIG_mpd = "mad lame id3tag"
-PACKAGECONFIG_libav = "bzip2 jack mp3lame x264"
+# see console-image-plus.bb for other recipe-specific PACKAGECONFIG tweaks
 PACKAGECONFIG_openbox = "imlib2 xrandr xcursor startup-notification"
 PACKAGECONFIG_vim = "acl gtkgui x11"
+
+# possible values are internal or external
+CUSTOM_FEED_CONFIG = "external"
+
+# set the following parameters here (defaults in local.conf)
+DEFAULT_TIMEZONE = "PST8PDT"
+
+# possible values are 1 (DVI only) or 2 (hdmi with audio)
+DEFAULT_AUDIO_OUT = "2"
+
+# for real-time audio support (includes RT_GROUP_SCHED)
+KERNEL_ENABLE_CGROUPS = "1"
 
 include xorg-openbox.inc
 
