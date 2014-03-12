@@ -59,6 +59,7 @@ check_network_cruft() {
     # hard shutdowns leaves stale files which pooches network startup
     test -e /run/udhcpc.eth0.pid && rm -f /run/udhcpc.eth0.pid
     test -e /run/ifstate && rm -f /run/ifstate
+    test -e /run/messagebus.pid && rm -f /run/messagebus.pid
 }
 
 case "$1" in
