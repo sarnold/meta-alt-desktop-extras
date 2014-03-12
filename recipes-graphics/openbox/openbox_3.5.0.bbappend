@@ -1,8 +1,4 @@
-# Don't forget to bump PRINC if you update the extra files.
-PRINC := "${@int(PRINC) + 7}"
-
-THISDIR := "${@os.path.dirname(bb.data.getVar('FILE', d, True))}"
-FILESPATH =. "${@base_set_filespath(["${THISDIR}/${PN}"], d)}:"
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI = "http://dev.gentoo.org/~hwoarang/distfiles/${P}_p20130215.tar.gz;name=source"
 SRC_URI += "http://www.gentoogeek.org/files/rpi-backgrounds.tar.gz;name=backgrounds"
@@ -25,15 +21,18 @@ do_configure_prepend() {
 }
 
 do_install_append () {
-	install -d ${D}/${sysconfdir}/mini_x
-	install -m 0755 ${WORKDIR}/mini_x.session ${D}/${sysconfdir}/mini_x/session
+	# normally installs as /etc/mini_x/session 
+	install -d ${D}${sysconfdir}/mini_x
+	install -T -m 0755 ${WORKDIR}/mini_x.session ${D}${sysconfdir}/mini_x/session
 
 	# add default menu
 	cp -f ${WORKDIR}/menu.xml ${D}/${sysconfdir}/xdg/openbox/
 
-	# add some rpi images (creative commons share-able)
-	install -d ${D}/usr/share/backgrounds
-	install ${S}/rpi-backgrounds/* ${D}/usr/share/backgrounds/
+	if [ "${MACHINE}" == "raspberrypi" ] ; then
+		# add some rpi images (creative commons share-able)
+		install -d ${D}/usr/share/backgrounds/rpi
+		install ${S}/rpi-backgrounds/* ${D}/usr/share/backgrounds/rpi/
+	fi
 }
 
 PACKAGES =+ "openbox-backgrounds"
