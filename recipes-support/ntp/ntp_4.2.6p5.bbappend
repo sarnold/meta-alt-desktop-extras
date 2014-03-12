@@ -1,6 +1,4 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-# Don't forget to bump PRINC if you update the extra files.
-PRINC := "${@int(PRINC) + 3}"
 
 SRC_URI += "file://ntpd.init"
 
@@ -14,7 +12,7 @@ do_configure_prepend() {
 
     sed -i \
         -e "s|etc/ntp.drift|var/lib/ntp/ntp.drift|" \
-        -e "s|time.server.example.com|pool.ntp.org|" \
+        -e "s|time.server.example.com|0.gentoo.pool.ntp.org|" \
         -e "s|server 127|#server 127|" \
         -e "s|fudge 127|#fudge 127|" \
         ${WORKDIR}/ntp.conf
