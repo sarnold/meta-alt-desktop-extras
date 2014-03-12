@@ -11,7 +11,7 @@ IMAGE_FEATURES += " ssh-server-openssh splash package-management hwcodecs \
 # more settings in rpi-xorg-image
 PACKAGECONFIG_mpd = "mad lame id3tag"
 PACKAGECONFIG_libav = "bzip2 jack mp3lame x264"
-PACKAGECONFIG_sox = "alsa mad id3tag lame
+PACKAGECONFIG_sox = "alsa mad id3tag lame"
 PACKAGECONFIG_fluidsynth = "jack sndfile"
 
 # Include modules in rootfs
