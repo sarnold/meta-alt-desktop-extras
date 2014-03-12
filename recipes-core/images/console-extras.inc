@@ -1,0 +1,57 @@
+## extra console apps for new image recipe structure
+
+IMAGE_INSTALL += " \
+    vc-graphics-hardfp \
+    bcm2835-tests \
+    rpiuser-account \
+    shadow \
+    udev-utils \
+    encodings \
+    sudo \
+    bash \
+    nano \
+    zram \
+    rsync \
+    screen \
+    gkrellm \
+    cpufrequtils \
+    python-shell \
+    packagegroup-base-vfat \
+    packagegroup-base-alsa \
+    alsa-utils-speakertest \
+    alsa-utils-amixer \
+    mpd \
+    mpc \
+    empcd \
+    mc \
+    file \
+    links \
+    irssi \
+    tzdata \
+    ntp \
+    ntpdate \
+    ntp-utils \
+    perl-module-socket \
+    perl-module-getopt-std \
+    usbutils \
+    sysfsutils \
+    findutils \
+    dosfstools \
+    nfs-utils \
+    cifs-utils \
+    ntfsprogs \
+    i2c-tools \
+    strace \
+    lsof \
+    git \
+    lirc \
+    lirc-exec \
+    lirc-remotes \
+    lirc-x \
+    bluez-hcidump \
+    bluez4-agent \
+    wpa-supplicant \
+    jack-server \
+    jack-utils \
+    fluidsynth \
+    "

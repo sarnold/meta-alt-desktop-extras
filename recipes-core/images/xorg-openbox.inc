@@ -1,7 +1,15 @@
+VIRTUAL-RUNTIME_xserver_common = "x11-common"
+
+# not sure yet if this needs an alternate like lxdm or not
+VIRTUAL-RUNTIME_graphical_init_manager = ""
+
 XSERVER = " \
     packagegroup-core-x11 \
-    packagegroup-core-x11-base \
     packagegroup-fonts-truetype-core \
+    packagegroup-core-x11-xserver \
+    packagegroup-core-x11-utils \
+    dbus \
+    pointercal \
     libxi \
     libxtst \
     libx11-locale \
@@ -38,10 +46,13 @@ WINDOW_MANAGER = " \
     xdg-utils \
     obconf \
     tint2 \
+    lxdm \
+    lxdm-init \
 "
 
 DESKTOP_APPS = " \
     imagemagick \
+    vim \
     feh \
     mupdf \
     xchat \
@@ -53,6 +64,7 @@ DESKTOP_APPS = " \
     gnome-bluetooth \
     pcmanfm \
     xfmpc \
+    geany \
     gkrellm-client \
     gst-meta-video \
     gst-meta-audio \
@@ -90,5 +102,4 @@ IMAGE_INSTALL += "\
     ${DEJAVU_FONTS} \
     ${EXTRA_TIMEZONES} \
 "
-
 
