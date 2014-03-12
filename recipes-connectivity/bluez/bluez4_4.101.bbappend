@@ -1,5 +1,4 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-PRINC := "${@int(PRINC) + 6}"
 
 SRC_URI_append = "file://bluez-plugdev.patch \
                   file://bluetooth-agent.init \

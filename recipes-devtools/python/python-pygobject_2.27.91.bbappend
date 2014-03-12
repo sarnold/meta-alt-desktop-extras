@@ -1,6 +1,5 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-PRINC := "${@int(PRINC) + 1}"
 
 do_install_append() {
   rm -f ${D}/usr/lib/libpyglib-2.0-python.la

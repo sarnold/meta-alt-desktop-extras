@@ -1,7 +1,5 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-# Don't forget to bump PRINC if you update the extra files.
-PRINC := "${@int(PRINC) + 2}"
 
 RPROVIDES_${PN}-tests += "imlib2-tests"
 RPROVIDES_${PN}-themes += "imlib2-themes"
