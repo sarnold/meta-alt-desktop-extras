@@ -1,15 +1,13 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-# Don't forget to bump PRINC if you update the extra files.
-PRINC := "${@int(PRINC) + 2}"
-
 SRC_URI += "file://limits.conf"
 
 inherit useradd
 
 do_install_append() {
-    install -d ${D}/${sysconfdir}/security
-    install ${WORKDIR}/limits.conf ${D}/${sysconfdir}/security
+    RT_DIR="${sysconfdir}/security/limits.d"
+    install -d ${D}${RT_DIR}
+    install ${WORKDIR}/limits.conf ${D}${RT_DIR}/40-realtime-base.conf
 }
 
 PROVIDES = "jack-server libjack"
