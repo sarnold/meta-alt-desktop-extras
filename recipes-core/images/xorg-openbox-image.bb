@@ -1,6 +1,6 @@
 include console-image-plus.bb
 
-DESCRIPTION = "A custom openbox image based on rpi-console-image"
+DESCRIPTION = "A custom openbox image based on console-image-plus.bb"
 PR = "r1"
 
 # base image features set in console-image-plus.bb
@@ -13,9 +13,6 @@ PACKAGECONFIG_vim = "acl gtkgui x11"
 
 # set the following parameters here (defaults in local.conf)
 DEFAULT_TIMEZONE = "PST8PDT"
-
-# possible values are 1 (DVI only) or 2 (hdmi with audio)
-DEFAULT_AUDIO_OUT = "2"
 
 # for real-time audio support (includes RT_GROUP_SCHED)
 KERNEL_ENABLE_CGROUPS = "1"
