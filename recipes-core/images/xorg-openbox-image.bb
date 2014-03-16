@@ -8,10 +8,8 @@ IMAGE_FEATURES_append = " x11 x11-base "
 
 # see console-image-plus.bb for other recipe-specific PACKAGECONFIG tweaks
 PACKAGECONFIG_openbox = "imlib2 xrandr xcursor startup-notification"
+PACKAGECONFIG_libxfce4ui = "gladeui startup-notification"
 PACKAGECONFIG_vim = "acl gtkgui x11"
-
-# possible values are internal or external
-CUSTOM_FEED_CONFIG = "external"
 
 # set the following parameters here (defaults in local.conf)
 DEFAULT_TIMEZONE = "PST8PDT"
@@ -24,4 +22,4 @@ KERNEL_ENABLE_CGROUPS = "1"
 
 include xorg-openbox.inc
 
-export IMAGE_BASENAME = "rpi-xorg-image"
+export IMAGE_BASENAME = "xorg-openbox-image"
