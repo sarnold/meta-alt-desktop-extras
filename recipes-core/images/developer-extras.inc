@@ -17,4 +17,5 @@ IMAGE_INSTALL += " \
     flex \
     yasm \
     gdb \
+    gnat-gcc-bin \
 "

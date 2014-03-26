@@ -24,6 +24,11 @@ IMAGE_INSTALL += " \
     mpc \
     empcd \
     mc \
+    zip \
+    gzip \
+    bzip2 \
+    tar \
+    cpio \
     file \
     links \
     irssi \
@@ -54,4 +59,5 @@ IMAGE_INSTALL += " \
     jack-server \
     jack-utils \
     fluidsynth \
+    sox \
     "
