@@ -3,24 +3,10 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI_append = " file://xserver-lxdm \
 "
 
-DEPENDS_prepend = "virtual/libintl intltool-native "
-
-DEPENDS += " iso-codes "
-
-inherit update-rc.d pkgconfig
+inherit update-rc.d
 
 INITSCRIPT_NAME = "xserver-lxdm"
 INITSCRIPT_PARAMS_${PN}-init = "defaults 40"
-
-CFLAGS_append = " -fno-builtin-fork -fno-builtin-memset -fno-builtin-strstr "
-
-EXTRA_OECONF += " --enable-gtk3=no --enable-password=yes --with-x -with-xconn=xcb "
-
-do_patch_extra() {
-    cp ${STAGING_DATADIR}/gettext/po/Makefile.in.in ${S}/po/
-}
-
-addtask do_patch_extra before do_configure after do_patch
 
 do_install_append() {
     install -d ${D}${sysconfdir}/init.d
