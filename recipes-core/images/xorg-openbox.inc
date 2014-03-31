@@ -52,6 +52,7 @@ WINDOW_MANAGER = " \
 
 DESKTOP_APPS = " \
     imagemagick \
+    gkrellm \
     vim \
     feh \
     mupdf \
@@ -65,7 +66,6 @@ DESKTOP_APPS = " \
     pcmanfm \
     xfmpc \
     geany \
-    gkrellm-client \
     gst-meta-video \
     gst-meta-audio \
     imlib2-tests \

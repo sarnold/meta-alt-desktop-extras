@@ -3,15 +3,18 @@ DESCRIPTION = "GKrellM is a GTK-based stacked monitor program."
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6aa4c0c48b808b45244efd507765e2b8"
 
+INC_PR = "r2"
 
-INC_PR = "r1"
-
-SRC_URI = "http://members.dslextreme.com/users/billw/gkrellm/gkrellm-${PV}.tar.bz2 \
+SRC_URI += " \
 	file://gkrellmd \
 	file://gkrellmd.conf \
 "
 
 inherit pkgconfig update-rc.d
+
+INITSCRIPT_PACKAGES = "${PN}-daemon"
+INITSCRIPT_NAME_${PN}-daemon = "gkrellmd"
+INITSCRIPT_PARAMS_${PN}-daemon = "defaults 26"
 
 DEPENDS = "gtk+ glib-2.0 libsm libice"
 
@@ -46,23 +49,17 @@ do_install () {
 
 	mkdir -p ${D}${sbindir}
 	mv ${D}${bindir}/gkrellmd ${D}${sbindir}/
-	find ${D} -name true | xargs rm
+	find ${D} -name true | xargs rm -f
 }
 
-PACKAGES += "gkrellm-client"
-FILES_${PN} = "${sysconfdir}/gkrellmd.conf ${sysconfdir}/init.d/gkrellmd \
-${sbindir}"
-FILES_${PN}-client = "${bindir}"
-CONFFILES_${PN} = "${sysconfdir}/gkrellmd.conf"
+PROVIDES += "gkrellm-daemon"
 
-INITSCRIPT_NAME = "gkrellmd"
-INITSCRIPT_PARAMS = "start 26 2 3 4 5 . stop 21 0 1 6 ."
+PACKAGES =+ "gkrellm-daemon-dbg gkrellm-daemon"
 
-pkg_postinst_gkrellm() {
-if test "x$D" != "x"; then
-    exit 1
-else
-    /etc/init.d/gkrellmd stop
-    sleep 1
-fi
-}
+FILES_${PN}-daemon-dbg = "${sbindir}/.debug"
+FILES_${PN}-daemon = "${sysconfdir}/gkrellmd.conf ${sbindir} \
+  ${sysconfdir}/init.d/gkrellmd \
+"
+
+CONFFILES_${PN}-daemon = "${sysconfdir}/gkrellmd.conf"
+

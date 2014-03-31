@@ -13,7 +13,7 @@ IMAGE_INSTALL += " \
     zram \
     rsync \
     screen \
-    gkrellm \
+    gkrellm-daemon \
     cpufrequtils \
     python-shell \
     packagegroup-base-vfat \
