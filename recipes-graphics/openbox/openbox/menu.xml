@@ -11,6 +11,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Geany">
+    <action name="Execute">
+      <command>geany</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <item label="LeafPad">
     <action name="Execute">
       <command>leafpad</command>
@@ -25,7 +33,7 @@
 <menu id="apps-term-menu" label="Terminals">
   <item label="Vala Terminal">
     <action name="Execute">
-      <command>vala-terminal -fs 8 -g 80 24</command>
+      <command>vala-terminal -fs 9 -g 80 24</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -41,7 +49,7 @@
   </item>
   <item label="Xterm">
     <action name="Execute">
-      <command>xterm -fa 'Liberation Mono' -fs 8 -rightbar -sb -ls</command>
+      <command>xterm -fa 'Liberation Mono' -fs 9 -rightbar -sb -ls</command>
     </action>
   </item>
 </menu>

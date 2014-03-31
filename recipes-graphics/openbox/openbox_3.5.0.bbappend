@@ -1,10 +1,12 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-SRC_URI = "http://dev.gentoo.org/~hwoarang/distfiles/${P}_p20130215.tar.gz;name=source"
-SRC_URI += "http://www.gentoogeek.org/files/rpi-backgrounds.tar.gz;name=backgrounds"
-SRC_URI += "file://openbox-gnome-session-3.4.9.patch"
-SRC_URI += "file://mini_x.session"
-SRC_URI += "file://menu.xml"
+SRC_URI = "http://dev.gentoo.org/~hwoarang/distfiles/${P}_p20130215.tar.gz;name=source \
+           file://openbox-gnome-session-3.4.9.patch \
+           file://mini_x.session \
+           file://menu.xml \
+"
+
+SRC_URI_append_raspberrypi = "http://www.gentoogeek.org/files/rpi-backgrounds.tar.gz;name=backgrounds"
 
 S="${WORKDIR}"
 
@@ -27,20 +29,19 @@ do_install_append () {
 
 	# add default menu
 	cp -f ${WORKDIR}/menu.xml ${D}/${sysconfdir}/xdg/openbox/
-
-	if [ "${MACHINE}" == "raspberrypi" ] ; then
-		# add some rpi images (creative commons share-able)
-		install -d ${D}/usr/share/backgrounds/rpi
-		install ${S}/rpi-backgrounds/* ${D}/usr/share/backgrounds/rpi/
-	fi
 }
 
-PACKAGES =+ "openbox-backgrounds"
+do_install_append_raspberrypi() {
+    # add some rpi images (creative commons share-able)
+    install -d ${D}/usr/share/backgrounds/rpi
+    install ${S}/rpi-backgrounds/* ${D}/usr/share/backgrounds/rpi/
+}
+
+PACKAGES_prepend_raspberrypi = "openbox-backgrounds "
 
 FILES_${PN}-gnome += "${datadir}/gnome/ ${datadir}/gnome-session"
 FILES_${PN}-backgrounds = "/usr/share/backgrounds/*"
 FILES_${PN}-config += "${sysconfdir}/mini_x/*"
-
 
 SRC_URI[source.md5sum] = "1ccc090eb34d85a91e83feb994b6eaf9"
 SRC_URI[source.sha256sum] = "59f5f0d626a74141921432eec9131759b5991b63d904f6dfbaef2bb5061f0a3f"
