@@ -36,6 +36,7 @@ IMAGE_INSTALL += " \
     ntp \
     ntpdate \
     ntp-utils \
+    gnuplot \
     perl-module-socket \
     perl-module-getopt-std \
     usbutils \

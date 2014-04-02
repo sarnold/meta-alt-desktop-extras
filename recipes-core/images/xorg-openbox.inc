@@ -66,6 +66,7 @@ DESKTOP_APPS = " \
     pcmanfm \
     xfmpc \
     geany \
+    gnuplot-x11 \
     gst-meta-video \
     gst-meta-audio \
     imlib2-tests \
