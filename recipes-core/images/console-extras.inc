@@ -1,9 +1,16 @@
 ## extra console apps for new image recipe structure
 
-IMAGE_INSTALL += " \
+IMAGE_INSTALL_append_raspberrypi = " \
     vc-graphics-hardfp \
     bcm2835-tests \
     rpiuser-account \
+"
+
+IMAGE_INSTALL_append_beaglebone = " \
+    xuser-account \
+"
+
+IMAGE_INSTALL += " \
     shadow \
     udev-utils \
     encodings \

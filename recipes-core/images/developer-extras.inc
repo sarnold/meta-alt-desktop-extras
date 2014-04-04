@@ -1,14 +1,18 @@
 # extra compilers and other developer tools
 
+IMAGE_INSTALL_append_raspberrypi = " \
+    wiringpi \
+    rpio \
+    rpi-gpio \
+    gnat-gcc-bin \
+"
+
 IMAGE_INSTALL += " \
     diffutils \
     erlang \
     vala \
     lua \
     vala-dbus-binding-tool \
-    wiringpi \
-    rpio \
-    rpi-gpio \
     python-docutils \
     python-pyserial \
     python-pyusb \
@@ -17,5 +21,4 @@ IMAGE_INSTALL += " \
     flex \
     yasm \
     gdb \
-    gnat-gcc-bin \
 "
