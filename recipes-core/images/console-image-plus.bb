@@ -13,6 +13,7 @@ IMAGE_INSTALL += " \
     ${CORE_IMAGE_BASE_INSTALL} \
     ${CORE_IMAGE_EXTRA_INSTALL} \
     kernel-modules \
+    libcgroup \
 "
 
 include console-extras.inc
