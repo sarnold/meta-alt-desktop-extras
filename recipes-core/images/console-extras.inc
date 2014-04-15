@@ -22,6 +22,7 @@ IMAGE_INSTALL += " \
     screen \
     gkrellm-daemon \
     cpufrequtils \
+    cpufrequtils-init \
     python-shell \
     packagegroup-base-vfat \
     packagegroup-base-alsa \

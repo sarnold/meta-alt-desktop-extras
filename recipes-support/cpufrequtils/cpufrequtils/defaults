@@ -1,0 +1,5 @@
+# Governor to load when init is started
+START_OPTS="-g ondemand"
+
+# Governor to load when init is stopped
+STOP_OPTS="-g performance"
