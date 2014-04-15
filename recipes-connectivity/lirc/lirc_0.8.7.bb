@@ -25,11 +25,9 @@ inherit autotools update-rc.d
 SRC_URI_append = " file://lircd.init \
                    file://lircmd.init \
                    file://lircexec.init \
+                   file://lircd.conf_ipazzport \
+                   file://lircrc_ipazzport \
                  "
-
-SRC_URI_append_raspberrypi = " file://lircd.conf_ipazzport \
-                               file://lircrc_ipazzport \
-                             "
 
 SRC_URI_append_nslu2 = " file://lircd.conf_nslu2 \
                          file://lircrc_nslu2 \
