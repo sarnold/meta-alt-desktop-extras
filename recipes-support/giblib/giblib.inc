@@ -12,7 +12,7 @@ SRC_URI = "http://linuxbrit.co.uk/downloads/giblib-${PV}.tar.gz \
 
 S = "${WORKDIR}/giblib-${PV}"
 
-inherit autotools pkgconfig binconfig
+inherit autotools-brokensep pkgconfig binconfig
 
 export PKG_CONFIG_PATH="${STAGING_LIBDIR}/pkgconfig"
 

@@ -11,7 +11,7 @@ do_install_append() {
   install -d ${D}${sysconfdir}/init.d
   install -m 0755 ${WORKDIR}/bluetooth-agent.init ${D}${sysconfdir}/init.d/bluetooth-agent
 
-  install -m 0755 ${S}/lib/test-agent ${D}${bindir}/bluetooth-agent
+  install -m 0755 ${B}/lib/test-agent ${D}${bindir}/bluetooth-agent
 }
 
 PACKAGES =+ "gnome-bluetooth-agent"

@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=55fdc1113306167d6ea2561404ce02f8"
 DEPENDS += "ncurses glib-2.0"
 PR = "r1"
 
-inherit autotools
+inherit autotools-brokensep
 
 SRC_URI = "http://www.irssi.org/files/${P}.tar.bz2 \
 "

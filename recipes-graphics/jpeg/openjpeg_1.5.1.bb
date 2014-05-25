@@ -14,7 +14,7 @@ SRC_URI = "http://openjpeg.googlecode.com/files/openjpeg-${PV}.tar.gz"
 
 S = "${WORKDIR}/openjpeg-${PV}"
 
-inherit autotools pkgconfig
+inherit autotools-brokensep pkgconfig
 
 EXTRA_OECONF = " --enable-debug --disable-tiff --disable-lcms2 --disable-doc"
 

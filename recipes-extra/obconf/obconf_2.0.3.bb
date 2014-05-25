@@ -14,7 +14,7 @@ RDEPENDS_${PN} = "openbox gtk+"
 
 S = "${WORKDIR}"
 
-inherit pkgconfig autotools
+inherit pkgconfig autotools-brokensep
 
 export BUILD_SYS
 export HOST_SYS
