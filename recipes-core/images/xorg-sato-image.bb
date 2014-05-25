@@ -10,7 +10,7 @@ IMAGE_FEATURES += "package-management ssh-server-dropbear splash \
     x11-sato x11-base hwcodecs"
 
 # you can override the following three parameters in your local.conf
-DEFAULT_TIMEZONE ?= "Universal"
+DEFAULT_TIMEZONE = "PST8PDT"
 
 # possible values are 1 (DVI only) or 2 (hdmi with audio)
 DEFAULT_AUDIO_OUT ?= "2"

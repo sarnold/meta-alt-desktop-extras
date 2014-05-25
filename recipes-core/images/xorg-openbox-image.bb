@@ -3,6 +3,9 @@ include console-image-plus.bb
 DESCRIPTION = "A custom openbox image based on console-image-plus.bb"
 PR = "r2"
 
+# add to defaul distro features
+DISTRO_FEATURES_append = " x11 opengl"
+
 # base image features set in console-image-plus.bb
 IMAGE_FEATURES_append = " x11 x11-base "
 
@@ -14,5 +17,6 @@ KERNEL_ENABLE_CGROUPS = "1"
 
 # add some X and custom desktop apps
 include xorg-openbox.inc
+include desktop-apps.inc
 
 export IMAGE_BASENAME = "xorg-openbox-image"
