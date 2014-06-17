@@ -1,17 +1,18 @@
 Yocto  and OpenEmbedded Layer - meta-alt-desktop-extras
 =======================================================
 
-This is a miscellaneous software overlay for the meta-oe and poky, tested on RaspberryPi
-and beaglebone black devices.  It can be used with openembedded-core or poky (master branch),
-but not oe-classic.
+This is a miscellaneous software overlay for the meta-oe and poky,
+tested on RaspberryPi and BeagleBoneBlack devices.  It can be used
+with openembedded-core or poky (master branch), but not oe-classic.
 
 More information can be found at:
 
 http://www.raspberrypi.org/ (official RPi site)
+
 https://github.com/sarnold/meta-alt-desktop-extras/wiki
 
-This layer should work with different OpenEmbedded/Yocto distributions and
-layer stacks, such as:
+This layer should work with different OpenEmbedded/Yocto distributions
+and layer stacks, such as:
 
 * Distro-less (only with OE-Core).
 * Angstrom (main focus of upstream testing).
@@ -34,20 +35,30 @@ This layer depends on::
 
 How to use it:
 
-1. source poky/oe-init-build-env rpi-build
-2. Add needed layers to bblayers.conf:
+1 source poky/oe-init-build-env rpi-build
+
+2 Add needed layers to bblayers.conf:
+
   (for basic upstream hw image)
+
     - meta-raspberrypi
     - meta-openembedded/meta-oe
+
   (for xorg-openbox image)
+
     - meta-alt-desktop-extras
     - meta-openembedded/meta-gnome
     - meta-openembedded/meta-networking
     - meta-openembedded/meta-multimedia
     - meta-openembedded/meta-efl
     - meta-openembedded/meta-xfce
-3  Set MACHINE to raspberrypi in local.conf
-4. Set any other desired parameters in local.conf (see following sections)
-5. bitbake [rpi-hwup-image|xorg-openbox-image|console-image-plus]
-6. dd the .sdimg file to an SD card
-7. Boot your RPi.
+
+3 Set MACHINE to raspberrypi in local.conf
+
+4 Set any other desired parameters in local.conf (see following sections)
+
+5 bitbake [rpi-hwup-image|xorg-openbox-image|console-image-plus]
+
+6 dd the .sdimg file to an SD card
+
+7 Boot your RPi.
