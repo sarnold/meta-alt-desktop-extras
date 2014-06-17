@@ -1,5 +1,5 @@
-1. Yocto  and OpenEmbedded Layer - meta-alt-desktop-extras
-==========================================================
+Yocto  and OpenEmbedded Layer - meta-alt-desktop-extras
+=======================================================
 
 This is a miscellaneous software overlay for the meta-oe and poky, tested on RaspberryPi
 and beaglebone black devices.  It can be used with openembedded-core or poky (master branch),
@@ -7,8 +7,8 @@ but not oe-classic.
 
 More information can be found at:
 
-             http://www.raspberrypi.org/ (official RPi site)
-             https://github.com/sarnold/meta-alt-desktop-extras/wiki
+http://www.raspberrypi.org/ (official RPi site)
+https://github.com/sarnold/meta-alt-desktop-extras/wiki
 
 This layer should work with different OpenEmbedded/Yocto distributions and
 layer stacks, such as:
@@ -19,16 +19,18 @@ layer stacks, such as:
 
 and is tested locally with poky and meta-openembedded master branches.
 
-This layer depends on:
+This layer depends on::
 
-URI: git://git.yoctoproject.org/poky
-branch: master
-revision: HEAD
+ URI: git://git.yoctoproject.org/poky
+ branch: master
+ revision: HEAD
 
-URI: git://github.com/openembedded/meta-oe.git
-layers: see below
-branch: master
-revision: HEAD
+::
+
+ URI: git://github.com/openembedded/meta-oe.git
+ layers: see below
+ branch: master
+ revision: HEAD
 
 How to use it:
 
