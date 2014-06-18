@@ -1,4 +1,4 @@
-Yocto  and OpenEmbedded Layer - meta-alt-desktop-extras
+Poky  and OpenEmbedded Layer - meta-alt-desktop-extras
 =======================================================
 
 This is a miscellaneous software overlay for meta-oe and poky, tested 
