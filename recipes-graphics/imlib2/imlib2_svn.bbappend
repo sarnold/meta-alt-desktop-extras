@@ -1,5 +1,12 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
+inherit autotools-brokensep
+
+CFLAGS_append = " -I${STAGING_INCDIR}/freetype2"
+CXXFLAGS_append = " -I${STAGING_INCDIR}/freetype2"
+LDFLAGS_append = " -lfreetype"
+
+EXTRA_OECONF += "--enable-visibility-hiding"
 
 RPROVIDES_${PN}-tests += "imlib2-tests"
 RPROVIDES_${PN}-themes += "imlib2-themes"
