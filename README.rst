@@ -1,9 +1,9 @@
-Yocto  and OpenEmbedded Layer - meta-alt-desktop-extras
+Poky  and OpenEmbedded Layer - meta-alt-desktop-extras
 =======================================================
 
-This is a miscellaneous software overlay for the meta-oe and poky,
-tested on RaspberryPi and BeagleBoneBlack devices.  It can be used
-with openembedded-core or poky (master branch), but not oe-classic.
+This is a miscellaneous software overlay for meta-oe and poky, tested 
+on RaspberryPi and BeagleBoneBlack devices.  It can be used with 
+meta-openembedded and poky (master branch) or oe-core, but not oe-classic.
 
 More information can be found at:
 
@@ -16,7 +16,7 @@ and layer stacks, such as:
 
 * Distro-less (only with OE-Core).
 * Angstrom (main focus of upstream testing).
-* Yocto/Poky (main focus of this fork; see Section 2 below).
+* meta-oe/poky (main focus of this fork; see Section 2 below).
 
 and is tested locally with poky and meta-openembedded master branches.
 
