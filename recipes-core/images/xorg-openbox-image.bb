@@ -1,10 +1,7 @@
 include console-image-plus.bb
 
 DESCRIPTION = "A custom openbox image based on console-image-plus.bb"
-PR = "r2"
-
-# add to defaul distro features
-DISTRO_FEATURES_append = " x11 opengl"
+PR = "r3"
 
 # base image features set in console-image-plus.bb
 IMAGE_FEATURES_append = " x11 x11-base "

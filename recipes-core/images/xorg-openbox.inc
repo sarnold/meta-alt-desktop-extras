@@ -1,24 +1,19 @@
-VIRTUAL-RUNTIME_xserver_common = "x11-common"
-
-# not sure yet if this needs an alternate like lxdm or not
-VIRTUAL-RUNTIME_graphical_init_manager = "lxdm-init"
-
 XSERVER = " \
-    packagegroup-core-x11-base \
     packagegroup-core-x11 \
+    packagegroup-core-x11-utils \
     packagegroup-fonts-truetype-core \
+    libx11-locale \
     libxi \
     libxtst \
-    libx11-locale \
+    xserver-xf86-config \
     xorg-minimal-fonts \
-    gdk-pixbuf-loader-ico \
-    gdk-pixbuf-loader-bmp \
-    gdk-pixbuf-loader-ani \
-    gdk-pixbuf-xlib \
+    xkeyboard-config \
+    setxkbmap \
     xkbcomp \
     xmodmap \
     xrdb \
-    setxkbmap \
+    rgb \
+    xprop \
     xterm \
 "
 
@@ -31,6 +26,10 @@ WINDOW_MANAGER = " \
     openbox-theme-onyx \
     openbox-backgrounds \
     libcanberra-gtk2 \
+    gdk-pixbuf-loader-ico \
+    gdk-pixbuf-loader-bmp \
+    gdk-pixbuf-loader-ani \
+    gdk-pixbuf-xlib \
     gtk-theme-clearlooks \
     gtk-theme-crux \
     gtk-theme-mist \
@@ -38,11 +37,13 @@ WINDOW_MANAGER = " \
     gnome-icon-theme \
     gnome-icon-theme-enable \
     hicolor-icon-theme \
+    xcursor-transparent-theme \
     pyxdg \
     xdg-utils \
     obconf \
     tint2 \
-    lxdm \
+    lxdm-init \
+    x11vnc \
 "
 
 IMAGE_INSTALL += "\

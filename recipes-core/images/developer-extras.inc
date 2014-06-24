@@ -1,4 +1,4 @@
-# extra compilers and other developer tools
+# extra languages, compilers, and other developer tools
 
 IMAGE_INSTALL_append_raspberrypi = " \
     wiringpi \

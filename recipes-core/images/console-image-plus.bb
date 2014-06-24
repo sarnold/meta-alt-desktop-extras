@@ -5,12 +5,9 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d690 \
                     file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-include recipes-core/images/core-image-base.bb
+EXTRA_IMAGE_FEATURES_append = "tools-sdk tools-debug eclipse-debug"
 
-EXTRA_IMAGE_FEATURES = "tools-sdk tools-debug eclipse-debug"
-
-IMAGE_FEATURES += " ssh-server-openssh package-management hwcodecs \
-    ${EXTRA_IMAGE_FEATURES} "
+IMAGE_FEATURES += "splash ssh-server-openssh package-management hwcodecs ${EXTRA_IMAGE_FEATURES} "
 
 # Include modules in rootfs
 IMAGE_INSTALL += " \
@@ -18,6 +15,7 @@ IMAGE_INSTALL += " \
     libcgroup \
 "
 
+include console-base.inc
 include console-extras.inc
 include developer-extras.inc
 
