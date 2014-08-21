@@ -2,23 +2,15 @@
 
 IMAGE_INSTALL += " \
     zip \
-    gzip \
-    bzip2 \
-    tar \
-    cpio \
-    file \
+    ntp \
+    ntpdate \
+    ntp-utils \
     perl-module-socket \
     perl-module-getopt-std \
     usbutils \
-    sysfsutils \
-    coreutils \
-    findutils \
-    dosfstools \
     dbus-daemon-proxy \
     nfs-utils-client \
     cifs-utils \
-    ntfsprogs \
-    i2c-tools \
     strace \
     ltrace \
     lsof \

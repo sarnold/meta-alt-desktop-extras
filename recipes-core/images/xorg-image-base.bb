@@ -1,4 +1,4 @@
-DESCRIPTION = "An Xorg desktop image for small boards (eg, RaspberryPi, BeagleBoneBlack, etc)."
+DESCRIPTION = "A small Xorg openbox image for small boards (eg, RaspberryPi, BeagleBoneBlack, etc)."
 LICENSE = "MIT"
 PR = "r0"
 
@@ -10,6 +10,5 @@ EXTRA_IMAGE_FEATURES = "x11 x11-base"
 IMAGE_FEATURES += "${EXTRA_IMAGE_FEATURES}"
 
 include xorg-openbox.inc
-include desktop-apps.inc
 
 export IMAGE_BASENAME = "xorg-image-base"

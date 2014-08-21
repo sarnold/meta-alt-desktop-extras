@@ -29,24 +29,8 @@ DEJAVU_FONTS = " \
     ttf-dejavu-serif-condensed \
 "
 
-EXTRA_TIMEZONES = " \
-    tzdata-africa \
-    tzdata-americas \
-    tzdata-antarctica \
-    tzdata-arctic \
-    tzdata-asia \
-    tzdata-atlantic \
-    tzdata-australia \
-    tzdata-europe \
-    tzdata-misc \
-    tzdata-pacific \
-    tzdata-posix \
-    tzdata-right \
-"
-
 IMAGE_INSTALL += "\
     ${DESKTOP_APPS} \
     ${DEJAVU_FONTS} \
-    ${EXTRA_TIMEZONES} \
 "
 

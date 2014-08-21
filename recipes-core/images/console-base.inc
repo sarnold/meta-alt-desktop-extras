@@ -10,8 +10,19 @@ IMAGE_INSTALL_append_beaglebone = " \
 "
 
 IMAGE_INSTALL += " \
+    gzip \
+    bzip2 \
+    tar \
+    cpio \
+    file \
+    sysfsutils \
+    coreutils \
+    findutils \
+    dosfstools \
+    ntfsprogs \
+    i2c-tools \
     avahi-utils \
-    udev-utils \
+    udev-cache \
     encodings \
     shadow \
     sudo \
@@ -36,8 +47,25 @@ IMAGE_INSTALL += " \
     lirc-remotes \
     lirc-x \
     tzdata \
-    ntp \
-    ntpdate \
-    ntp-utils \
     mc \
 "
+
+EXTRA_TIMEZONES = " \
+    tzdata-africa \
+    tzdata-americas \
+    tzdata-antarctica \
+    tzdata-arctic \
+    tzdata-asia \
+    tzdata-atlantic \
+    tzdata-australia \
+    tzdata-europe \
+    tzdata-misc \
+    tzdata-pacific \
+    tzdata-posix \
+    tzdata-right \
+"
+
+IMAGE_INSTALL += "\
+    ${EXTRA_TIMEZONES} \
+"
+

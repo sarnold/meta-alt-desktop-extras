@@ -3,7 +3,7 @@ LICENSE = "MIT"
 PR = "r0"
 
 # example set in local.conf, not sure if this is kosher here
-##EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 IMAGE_FEATURES += "splash package-management ssh-server-openssh hwcodecs ${EXTRA_IMAGE_FEATURES}"
 
@@ -18,5 +18,6 @@ IMAGE_INSTALL += " \
 "
 
 include console-base.inc
+include console-extras.inc
 
 export IMAGE_BASENAME = "console-image-base"
