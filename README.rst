@@ -33,6 +33,12 @@ This layer depends on::
  branch: master
  revision: HEAD
 
+::
+
+ URI: git://github.com/sarnold/meta-small-arm-extra.git
+ branch: master
+ revision: HEAD
+
 How to use it:
 
 1 source poky/oe-init-build-env rpi-build
@@ -42,6 +48,7 @@ How to use it:
   (for basic upstream hw image)
 
     - meta-raspberrypi
+    - meta-small-arm-extra
     - meta-openembedded/meta-oe
 
   (for xorg-openbox image)
