@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Copyright (c) 2014 Stephen Arnold <stephen.arnold42 _at_ gmail.com>
 # License: GPL (see http://www.gnu.org/licenses/gpl.txt for a copy of the license)
@@ -24,7 +24,7 @@ if [ -e /etc/default/cpufrequtils ]; then
 fi
 
 start() {
-    /usr/sbin/cpufreq-init.sh ${START_OPTS}
+    /usr/sbin/cpufreq-init.sh "${START_OPTS}"
     exit $?
 }
 
