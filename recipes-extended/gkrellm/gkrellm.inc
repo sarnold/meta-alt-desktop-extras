@@ -18,22 +18,21 @@ INITSCRIPT_PARAMS_${PN}-daemon = "defaults 26"
 
 DEPENDS = "gtk+ glib-2.0 libsm libice"
 
-EXTRA_OEMAKE = "'glib12=0' 'STRIP=/bin/true'"
+EXTRA_OEMAKE = "TARGET= 'CC=${CC}' 'STRIP=' INSTALLROOT='/usr'"
 
 export LINK_FLAGS = "${LDFLAGS}"
 export SMC_LIBS = "-lSM -lICE -lX11 -lgmodule-2.0 -lm"
 
 do_configure_prepend() {
 	sed -i -e "s|getline|gkrellm_getline|" ${S}/src/client.c
+
+	sed -e 's:-O2 ::' \
+		-e 's:override CC:CFLAGS:' \
+		-e 's:-L/usr/X11R6/lib::' \
+		-i */Makefile || die "sed Makefile(s) failed"
 }
 
 do_install () {
-	# fix install errors
-	sed -i -e 's|gkrellm \$(INSTALLDIR)/$(PACKAGE|gkrellm \$(INSTALLDIR|' \
-			${S}/src/Makefile
-	sed -i -e 's|gkrellmd \$(SINSTALLDIR)/\$(PACKAGE_D|gkrellmd \$(SINSTALLDIR|' \
-			${S}/server/Makefile
-
 	oe_runmake 'INSTALLDIR=${D}${bindir}' \
 		'SINSTALLDIR=${D}${bindir}' \
 		'MANDIR=${D}${mandir}/man1' \
@@ -41,6 +40,7 @@ do_install () {
 		'INCLUDEDIR=${D}${includedir}' \
 		'PKGCONFIGDIR=${D}${libdir}/pkgconfig' \
 		'LOCALEDIR=${D}${datadir}/locale' \
+		'STRIP=' \
 		install
 
 	install -d ${D}${sysconfdir}/init.d
