@@ -18,14 +18,22 @@ SRC_URI = "http://www.phystech.com/ftp/dhcpcd-${PV}.tar.gz \
 
 inherit autotools
 
+do_configure_prepend() {
+    sed -i -e "s|linux/if_tr.h|netinet/if_tr.h|" "${S}"/client.h
+}
+
 do_configure_append() {
     # remove the liberally sprinkled strip flags
     sed -i \
         -e "s|STRIP_FLAG=-s|STRIP_FLAG=|" \
         -e "s|-c -s|-c|" \
         -e "s|-s -O2|-O2|" \
-        Makefile
+        "${B}"/Makefile
 }
 
 SRC_URI[md5sum] = "dd627a121e43835bead3ffef5b1a72fd"
 SRC_URI[sha256sum] = "f435e14e1f54dc8792f4e655463d07f2bdbe6d8a8581bd62f5167334ab18bb87"
+
+PROVIDES = "dhcpcd dhcp-client"
+
+#RCONFLICTS_${PN} = "dhcp-client"

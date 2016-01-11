@@ -7,7 +7,7 @@ do_install_append() {
         install -d ${D}${sbindir}
         install -d ${D}${sysconfdir}/init.d
         install -d ${D}${sysconfdir}/default
-        install -m 0755 ${WORKDIR}/cpufreq-init.sh ${D}${sbindir}/
+        install -T -m 0755 ${WORKDIR}/cpufreq-init.sh ${D}${sbindir}/cpufreq-init.sh
         install -T -m 0755 ${WORKDIR}/init ${D}${sysconfdir}/init.d/cpufrequtils
         install -T -m 0644 ${WORKDIR}/defaults ${D}${sysconfdir}/default/cpufrequtils
     fi

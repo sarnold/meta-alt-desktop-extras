@@ -56,7 +56,7 @@ check_network_swap() {
 }
 
 check_network_cruft() {
-    # hard shutdowns leaves stale files which pooches network startup
+    # hard shutdowns can leave stale files which pooches network startup
     test -e /run/udhcpc.eth0.pid && rm -f /run/udhcpc.eth0.pid
     test -e /run/ifstate && rm -f /run/ifstate
     test -e /run/messagebus.pid && rm -f /run/messagebus.pid
@@ -66,7 +66,8 @@ case "$1" in
 start)
 	echo -n "Configuring network interfaces... "
 	# uncomment if hard shutdowns keep networking from starting on boot
-	check_network_cruft
+	#check_network_cruft
+	sysctl -e -p /etc/sysctl.conf >/dev/null 2>&1
 	ifup -a
 	echo "done."
 	;;
