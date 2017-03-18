@@ -13,10 +13,14 @@ do_install_append() {
 
     sed -i -e '/# session=/a session=/usr/bin/openbox-session' \
         ${D}${sysconfdir}/lxdm/lxdm.conf
+}
 
+do_postinstall_raspberrypi() {
     sed -i -e '/# bg=/a bg=/usr/share/backgrounds/rpi/fancy-pi.jpg' \
         ${D}${sysconfdir}/lxdm/lxdm.conf
 }
+
+addtask postinstall after do_install before do_build
 
 PACKAGES =+ "lxdm-init"
 
